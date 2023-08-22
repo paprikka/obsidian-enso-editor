@@ -1,3 +1,34 @@
+.enso-fade-enabled {
+	--color-base-00: #fff4f4;
+	--color-base-100: #333;
+	--file-line-width: 30rem;
+
+	.workspace-tabs {
+		background-color: red !important;
+	}
+	.cm-line {
+		opacity: 0.01;
+		transition: opacity 0.2s ease-in-out;
+	}
+
+	.cm-line.cm-active {
+		opacity: 1;
+	}
+
+	.cm-line:has(+ .cm-active) {
+		opacity: 0.3;
+	}
+	.cm-line:has(+ .cm-line + .cm-active) {
+		opacity: 0.15;
+	}
+	.cm-line:has(+ .cm-line + .cm-line + .cm-active) {
+		opacity: 0.08;
+	}
+	.cm-line:has(+ .cm-line + .cm-line + .cm-line + .cm-active) {
+		opacity: 0.02;
+	}
+}
+
 /*
 
 This CSS file will be included with your plugin, and
